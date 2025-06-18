@@ -1,7 +1,7 @@
 from aiogram import Router, F
 from aiogram.types import Message, CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.filters import CommandStart, Command
-from config import API
+from config import API, ADMIN_ID
 from text import greeting_text, help_text, info_text, commands_text, thanks_text, review_text, how_to_use_text
 from datetime import datetime
 import requests
@@ -178,5 +178,19 @@ async def catch_review(message: Message):
 
     await message.answer(thanks_text)
     waiting_for_review.remove(user_id)
+
+
+
+    try:
+        await message.bot.send_message(
+            ADMIN_ID,
+            f"📝 *Новый отзыв*\n"
+            f"👤 Пользователь: {user_name} (ID: {user_id})\n"
+            f"🕒 Время: {timestamp}\n"
+            f"💬 Текст: {review_text}",
+            parse_mode="Markdown"
+        )
+    except Exception as e:
+        print(f'ошибка при отправке сообщения')
 
 '''rewiew block ends'''
