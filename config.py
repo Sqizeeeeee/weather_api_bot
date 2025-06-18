@@ -1,4 +1,5 @@
 import os
 
-BOT_TOKEN = os.getenv("BOT_TOKEN")
+TOKEN = os.getenv("TOKEN")
+API = os.getenv("API")
 DEBUG = os.getenv("DEBUG", False)

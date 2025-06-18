@@ -1,7 +1,7 @@
 from aiogram import Router, F
 from aiogram.types import Message, CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.filters import CommandStart, Command
-from config import API_KEY
+from config import API
 from text import greeting_text, help_text, info_text, commands_text, thanks_text, review_text, how_to_use_text
 from datetime import datetime
 import requests
@@ -55,7 +55,7 @@ def get_weather(location):
 
     url = "http://api.weatherapi.com/v1/forecast.json"
     params = {
-        "key": API_KEY,
+        "key": API,
         "q": location,
         "days": 1,       # прогноз на 1 день
         "lang": "ru",    # русский язык

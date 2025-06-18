@@ -4,6 +4,8 @@ from app import handlers
 from aiogram import Bot, Dispatcher
 from app.handlers import router
 from config import TOKEN
+from dotenv import load_dotenv
+load_dotenv()
 
 
 logging.getLogger("aiogram").setLevel(logging.ERROR)
