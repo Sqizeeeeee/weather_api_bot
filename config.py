@@ -1,10 +1,4 @@
-from dotenv import load_dotenv
-load_dotenv()
-
-
 import os
 
-API_KEY = os.getenv('API_KEY')
-
-TOKEN = os.getenv('TOKEN')
-
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+DEBUG = os.getenv("DEBUG", False)

@@ -1,2 +1,1 @@
-worker: python run.py
-web: python -m http.server $PORT
+web: python run.py
